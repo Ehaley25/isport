@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% block content %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Location Name</th>
+            <th>Attendees</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{events.event_name}}</td>
+                <td>
+                    <a href="#">View Instructions</a>
+                    {% if recipe.user_id == session.user_id %}
+                    <a href="#">Edit</a>
+                    <a href="#">Delete</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

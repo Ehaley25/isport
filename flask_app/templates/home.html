@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block content %}
+<h1 class="hello">Hello {{user.first_name}}!</h1>
+<div class="col-8 mx-auto">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Location</th>
+                    <th>Attendees</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{event.event_name}}</td>
+                        <td>{{event.location}}</td>
+                        <td>{{event.attendees}}</td>
+                        <td>{{event.date.strftime('%Y-%m-%d')}}</td>
+                        <td>{{event.profile_picture}}</td>
+                        <td>
+                            <a href="/event/{{event.id}}">View</a>
+                            {% if event.user_id == session.user_id %}
+                                <a href="/edit/event/{{event.id}}">Edit</a>
+                                <a href="/destroy/event/{{event.id}}">Delete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+

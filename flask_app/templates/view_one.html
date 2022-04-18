@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block content %}
+    <div>
+        <div class="card-body">
+            <h2 class="card-title text-primary">{{event.event_name}}</h2>
+            <p class="card-text">Location:  {{event.location}}</p>
+            <p class="card-text">Description: {{event.description}}</p>
+            <p class="card-text">Attendees:  {{event.attendees}}</p>
+            <p class="card-text">Event Date:  {{event.date.strftime('%Y-%m-%d')}}</p>
+        </div>
+    </div>
+</table>
+
+
+
+
+{% endblock %}
