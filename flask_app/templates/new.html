@@ -1,7 +1,7 @@
 {% extends "template.html" %}
 {% block content %}
 <h2 class="create">Create an Event</h2>
-<form action="/create/event" method="post" class="col-11 p-4 my-4 bg-dark text-light mx-auto">
+<form action="/create/event" method="post" class="col-11 p-4 my-4 text-light mx-auto">
     {% with messages = get_flashed_messages(category_filter=['event']) %}
     {% if messages %}
     <div class="alert alert-danger" role="alert">
