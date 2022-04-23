@@ -79,3 +79,7 @@ def destroy_event(id):
     }
     Event.destroy(data)
     return redirect('/home')
+
+@app.errorhandler(404)
+def error(incorrect):
+    return render_template("error.html")
