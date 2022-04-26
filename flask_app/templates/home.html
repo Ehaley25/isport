@@ -19,7 +19,6 @@
                         <td>{{event.location}}</td>
                         <td>{{event.attendees}}</td>
                         <td>{{event.date.strftime('%Y-%m-%d')}}</td>
-                        <td>{{event.profile_picture}}</td>
                         <td>
                             <a href="/event/{{event.id}}">View</a>
                             {% if event.user_id == session.user_id %}
