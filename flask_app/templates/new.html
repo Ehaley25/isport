@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 {% block content %}
-<h2 class="create">Create an Event</h2>
+<h2 class="text-center">Create an Event</h2>
 <form action="/create/event" method="post" class="col-11 p-4 my-4 text-light mx-auto">
     {% with messages = get_flashed_messages(category_filter=['event']) %}
     {% if messages %}
@@ -28,7 +28,7 @@
         <div class="col-4">
             <div class="form-group">
                 <label for="date">Date of Event:</label>
-                <input type="date" name="date" class="form-control">
+                <input required type="date" name="date" class="form-control">
             </div>
             <label for="attendees">Amount of People Coming:</label>
             <div class="input-group-text bg-dark">

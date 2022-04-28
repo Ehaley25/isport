@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 {% block content %}
-<h2 class="create">Update your Event</h2>
+<h2 class="text-center">Update your Event</h2>
 <form action='/update/event' method="post" class="col-11 p-4 my-4 text-light mx-auto">
     {% with messages = get_flashed_messages(category_filter=['event']) %}
     {% if messages %}
